@@ -1,94 +1,121 @@
 :root {
-    --main-bg-color: #f5f5f5;
-    --accent-color: #9bb4ec;
-    --text-color: #5959bb;
-    --button-color: #3065d8;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--main-bg-color);
-    color: var(--text-color);
-  }
-  
-  header {
-    background-color: var(--accent-color);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
+  --main-bg-color: #f5f5f5;
+  --accent-color: #9bb4ec;
+  --text-color: #5959bb;
+  --button-color: #3065d8;
+}
 
-  .search-sort{
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+}
 
-  input{
-    padding: 5px 10px;
-    border-radius: 10px;
-    border: none;
-  }
+header {
+  background-color: var(--accent-color);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
 
-  #perPageContainer {
-    margin: 20px 0 10px 0;
-    text-align: end;
-  }
-  
-  #perPageSelect {
-    padding: 5px;
-    font-size: 14px;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  h2 {
-    margin-top: 20px;
-  }
-  
-  #cryptoList, #comparisonTable {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  
-  .crypto-card, .comparison-card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    background: #e4eaf563;
-    width: 200px;
-    text-align: center;
-  }
-  
-  button {
+.search-sort {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+input {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+#perPageContainer {
+  margin: 20px 0 10px 0;
+  text-align: end;
+}
+
+#perPageSelect, #themeSelect {
+  padding: 5px;
+  font-size: 14px;
+}
+
+main {
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+#cryptoList, #comparisonTable {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.crypto-card, .comparison-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  background: #e4eaf563;
+  width: 200px;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #9bb4ec;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  --main-bg-color: #121212;
+  --accent-color: #575757;
+  --text-color: #ffffff;
+  --button-color: #bb86fc;
+}
+
+/* Blue Theme */
+body.blue-theme {
+  --main-bg-color: #e0f7fa;
+  --accent-color: #80deea;
+  --text-color: #006064;
+  --button-color: #0097a7;
+}
+
+@media only screen and (max-width: 600px) {
+  h1{
     padding: 10px;
-    margin: 5px;
-    background-color: var(--button-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
   }
-  
-  button:hover {
-    background-color: #9bb4ec;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: var(--accent-color);
-    color: white;
-  }
-  
 
-  @media only screen and (max-width: 600px) {
-    .search-sort {
+  .search-sort {
       flex-direction: column;
-    }
   }
+
+  #perPageContainer{
+    text-align: left;
+  }
+
+  #cryptoList, #comparisonTable {
+    justify-content: center;
+}
+}

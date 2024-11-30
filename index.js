@@ -223,7 +223,7 @@ function applyTheme(theme) {
 
 // Initialize the theme on page load
 function initializeTheme() {
-  const savedTheme = localStorage.getItem("selectedTheme") || "light"; // Default to light theme
+  const savedTheme = localStorage.getItem("selectedTheme") || "default"; // Default theme
   $("#themeSelect").val(savedTheme); // Set dropdown to saved theme
   applyTheme(savedTheme); // Apply the saved theme
 }
