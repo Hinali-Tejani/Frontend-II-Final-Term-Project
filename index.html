@@ -1,79 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Real-Time Cryptocurrency Tracker</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real-Time Cryptocurrency Tracker</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+    <body>
+        <header>
+            <h1>Real-Time Cryptocurrency Tracker</h1>
+            <div id="themeContainer">
+                <label for="themeSelect">Theme:</label>
+                <select id="themeSelect">
+                    <option value="default" selected>Default</option>
+                    <option value="dark">Dark</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </div>
+        </header>
 
-<body>
-  <header>
-    <h1>Real-Time Cryptocurrency Tracker</h1>
-    <div id="themeContainer">
-      <label for="themeSelect">Theme:</label>
-      <select id="themeSelect">
-        <option value="default" selected>Default</option>
-        <option value="dark">Dark</option>
-        <option value="blue">Blue</option>
-      </select>
-    </div>
-  </header>
+        <main>
+            <!-- User Preferences -->
+            <section id="preferencesSection">
+                <h2>User Preferences</h2>
+                <div class="search-sort">
+                    <div>
+                        <!-- Search bar -->
+                        <input type="text" id="searchInput" placeholder="Search by name or symbol" />
+                        <button id="searchButton">Search</button>
+                        <button id="clearSearchButton" style="display: none">Clear</button>
+                    </div>
+                    <!-- sorting -->
+                    <div>
+                        <button id="sortMarketCap">Sort by Market Cap</button>
+                        <button id="sort24hChange">Sort by 24h Change</button>
+                    </div>
+                </div>
+                <!-- per-page -->
+                <div id="perPageContainer">
+                    <label for="perPageSelect">Cryptos per page:</label>
+                    <select id="perPageSelect">
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+            </section>
 
-  <main>
-    <!-- User Preferences -->
-    <section id="preferencesSection">
-      <h2>User Preferences</h2>
-      <!-- Search and sort -->
-      <div class="search-sort">
-        <div>
-          <!-- Search bar -->
-          <input type="text" id="searchInput" placeholder="Search by name or symbol" />
-          <button id="searchButton">Search</button>
-          <button id="clearSearchButton" style="display: none;">Clear</button>
-        </div>
-        <!-- sorting -->
-        <div>
-          <button id="sortMarketCap">Sort by Market Cap</button>
-          <button id="sort24hChange">Sort by 24h Change</button>
-        </div>
-      </div>
-      <!-- per-page -->
-      <div id="perPageContainer">
-        <label for="perPageSelect">Cryptos per page:</label>
-        <select id="perPageSelect">
-          <option value="10" selected>10</option>
-          <option value="20">20</option>
-          <option value="50">50</option>
-        </select>
-      </div>
-    </section>
-    
-    <!-- Cryptocurrency Listing -->
-    <section id="cryptoListSection">
-      <h2>Popular Cryptocurrencies</h2>
-      <div id="cryptoList"></div>
-    </section>
+            <!-- Cryptocurrency Listing -->
+            <section id="cryptoListSection">
+                <h2>Popular Cryptocurrencies</h2>
+                <div id="loadingSpinner" style="display: none">
+                    <div class="spinner" id="loading"></div>
+                </div>
+                <div id="cryptoList"></div>
+            </section>
 
-    <!-- Comparison Section -->
-    <section id="comparisonSection">
-      <h2>Comparison</h2>
-      <p id="comparisonMessage">Select up to 5 cryptocurrencies to compare.</p>
-      <div id="comparisonTable">
-        <!-- Dynamically populated -->
-      </div>
-    </section>
+            <!-- Comparison Section -->
+            <section id="comparisonSection">
+                <h2>Comparison</h2>
+                <p id="comparisonMessage">Select up to 5 cryptocurrencies to compare.</p>
+                <p id="noComparisonMessage" class="crypto-card">No crypto in comparison</p>
+                <div id="comparisonTable"></div>
+            </section>
+        </main>
 
-    
-  </main>
+        <footer>
+            <p>&copy; 2024 Cryptocurrency Tracker</p>
+        </footer>
 
-  <footer>
-    <p>&copy; 2024 Cryptocurrency Tracker</p>
-  </footer>
-
-  <script src="index.js"></script>
-</body>
-
+        <script src="index.js"></script>
+    </body>
 </html>
